@@ -2,6 +2,7 @@ var metro = require('./lib/metro');
 
 var app = metro.createServer();
 
+
 app.subscribe('/testexchange/test.route/tesetqueue', 'workflow1', function(workflow) {
 
 	workflow.http('stepone', function(http, data) {
@@ -17,7 +18,10 @@ app.subscribe('/testexchange/test.route/tesetqueue', 'workflow1', function(workf
 	workflow.http('stepthree', function(http, data) {
 		console.log('stepthree invoked');
 	});
-
+	
+	workflow.code('stepfour', function(data) {
+		console.log('stepfour invoked');
+	});
 });
 
 app.subscribe('/testexchange/test.route/tesetqueue2', 'workflow2', function(workflow) {
