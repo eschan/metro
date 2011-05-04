@@ -2,7 +2,7 @@ var metro = require('./lib/metro');
 
 var app = metro.createServer();
 
-app.subscribe('testexchange/test.route/tesetqueue', 'workflow1', function(workflow) {
+app.subscribe('testexchange/test.route/testqueue', 'workflow1', function(workflow) {
 
 	workflow.http('stepone', function(req, res) {
 		console.log('stepone invoked');
